@@ -1,0 +1,156 @@
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"duration":5,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:52:21"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:52:21"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Starting code review for octocat/Hello-World#1","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Starting code review","owner":"octocat","prNumber":1,"repo":"Hello-World","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Fetching PR details: https://github.com/octocat/Hello-World/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"octocat","prNumber":1,"repo":"Hello-World","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.md","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.html","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.json","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 05:55:09"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"duration":4,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 05:55:36"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 05:55:36"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"duration":5,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:01:46"}
+{"duration":0,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:01:46"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Starting code review for octocat/Hello-World#1","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Starting code review","owner":"octocat","prNumber":1,"repo":"Hello-World","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Fetching PR details: https://github.com/octocat/Hello-World/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"octocat","prNumber":1,"repo":"Hello-World","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.md","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.html","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/octocat-Hello-World-pr-1.json","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:02:11"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#1","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":1,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"udacity","prNumber":1,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.md","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.html","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.json","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:03:36"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#2","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":2,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/2","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"duration":2,"level":"info","message":"Code review completed","owner":"udacity","prNumber":2,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.md","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.html","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.json","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:04:06"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#3","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":3,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/3","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"udacity","prNumber":3,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.md","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.html","service":"code-review-system","timestamp":"2026-11-23 06:04:19"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.json","service":"code-review-system","timestamp":"2026-11-23 06:04:20"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:04:20"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Posting comment to test/repo#1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"duration":6,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Posting comment to test/repo#1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Posting comment to test/repo#1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Posting comment to test/repo#1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Starting code review","owner":"test","prNumber":1,"repo":"repo","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Fetching PR details: https://github.com/test/repo/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Posting comment to test/repo#1","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:36:47"}
+{"duration":1,"level":"info","message":"Code review completed","owner":"test","prNumber":1,"repo":"repo","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:36:47"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#1","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":1,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/1","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Posting comment to udacity/cd14715-simple-todo-app#1","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"duration":8,"level":"info","message":"Code review completed","owner":"udacity","prNumber":1,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.md","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.html","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-1.json","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:37:04"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#2","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":2,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/2","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Posting comment to udacity/cd14715-simple-todo-app#2","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"duration":11,"level":"info","message":"Code review completed","owner":"udacity","prNumber":2,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.md","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.html","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-2.json","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:38:43"}
+{"level":"info","message":"Using Anthropic API authentication","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Starting code review for udacity/cd14715-simple-todo-app#3","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Starting code review","owner":"udacity","prNumber":3,"repo":"cd14715-simple-todo-app","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Fetching PR details: https://github.com/udacity/cd14715-simple-todo-app/pull/3","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Preparing to post PR comment with review summary","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Posting comment to udacity/cd14715-simple-todo-app#3","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"warn","message":"GITHUB_TOKEN not set - skipping PR comment. Set GITHUB_TOKEN to enable automated comments.","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"duration":9,"level":"info","message":"Code review completed","owner":"udacity","prNumber":3,"repo":"cd14715-simple-todo-app","score":80,"service":"code-review-system","status":"success","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Markdown report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.md","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"HTML report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.html","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"JSON report saved to: /voc/work/py3.10-exercises/cd14715-claude-code-classroom/project/starter/reports/udacity-cd14715-simple-todo-app-pr-3.json","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}
+{"level":"info","message":"Code review complete","service":"code-review-system","timestamp":"2026-11-23 06:39:48"}

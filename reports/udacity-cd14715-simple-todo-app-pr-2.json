@@ -6,39 +6,169 @@
   },
   "fileReviews": [
     {
-      "file": "example.ts",
+      "file": "src/services/searchService.ts",
       "codeQuality": {
-        "file": "example.ts",
-        "issues": [],
-        "overallScore": 80,
-        "summary": "Code quality analysis complete"
+        "file": "src/services/searchService.ts",
+        "issues": [
+          {
+            "line": 24,
+            "severity": "high",
+            "category": "performance",
+            "description": "Using linear search O(n) instead of indexed search - will cause performance degradation with large datasets",
+            "suggestion": "Implement search index or use database native full-text search capabilities"
+          },
+          {
+            "line": 45,
+            "severity": "medium",
+            "category": "maintainability",
+            "description": "Complex query logic is not extracted into separate functions",
+            "suggestion": "Extract filter and sort logic into separate utility functions for reusability"
+          },
+          {
+            "line": 18,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing input validation for search parameters",
+            "suggestion": "Add schema validation for search query to prevent invalid inputs"
+          }
+        ],
+        "overallScore": 72,
+        "summary": "Search service has performance concerns and needs refactoring for maintainability"
       },
       "testCoverage": {
-        "file": "example.ts",
+        "file": "src/services/searchService.ts",
         "hasTests": true,
-        "testFiles": [],
-        "untestedPaths": [],
-        "coverageEstimate": 70,
-        "summary": "Test coverage analysis complete"
+        "testFiles": ["src/services/searchService.test.ts"],
+        "untestedPaths": [
+          {
+            "type": "branch",
+            "location": "Error handling on line 50-55",
+            "priority": "high",
+            "reasoning": "Database error scenarios not tested",
+            "suggestedTest": "Mock database failures and verify error handling"
+          },
+          {
+            "type": "edge-case",
+            "location": "Empty search results case",
+            "priority": "medium",
+            "reasoning": "No test for when search returns no results",
+            "suggestedTest": "Test with query that matches no items"
+          }
+        ],
+        "coverageEstimate": 68,
+        "summary": "Good coverage for happy path but missing critical error scenarios"
       },
       "refactorings": {
-        "file": "example.ts",
-        "suggestions": [],
-        "summary": "Refactoring analysis complete"
+        "file": "src/services/searchService.ts",
+        "suggestions": [
+          {
+            "type": "extract-function",
+            "location": "Query building logic lines 28-42",
+            "impact": "high",
+            "description": "Extract query builder into separate SearchQueryBuilder class",
+            "before": "const filters = []; if(query.text) filters.push(...); if(query.date) filters.push(...)",
+            "after": "const filters = new SearchQueryBuilder(query).build();",
+            "benefits": "Improves readability, makes logic testable, enables complex query support"
+          },
+          {
+            "type": "modernize",
+            "location": "String concatenation at line 35",
+            "impact": "medium",
+            "description": "Replace string concatenation with SQL parameter binding",
+            "before": "const sql = `SELECT * FROM todos WHERE text LIKE '%${query}%'`",
+            "after": "const sql = `SELECT * FROM todos WHERE text LIKE ?`; db.query(sql, [query])",
+            "benefits": "Prevents SQL injection, better database performance"
+          }
+        ],
+        "summary": "Significant refactoring opportunity to improve performance and security"
+      }
+    },
+    {
+      "file": "src/components/SearchBox.tsx",
+      "codeQuality": {
+        "file": "src/components/SearchBox.tsx",
+        "issues": [
+          {
+            "line": 12,
+            "severity": "medium",
+            "category": "best-practice",
+            "description": "Missing debounce on search input - triggers API call on every keystroke",
+            "suggestion": "Implement debounce with 300-500ms delay to reduce API calls"
+          },
+          {
+            "line": 35,
+            "severity": "low",
+            "category": "maintainability",
+            "description": "Magic numbers used for styling",
+            "suggestion": "Move hardcoded values to constants or CSS classes"
+          }
+        ],
+        "overallScore": 80,
+        "summary": "React component implementation is functional but needs performance optimization"
+      },
+      "testCoverage": {
+        "file": "src/components/SearchBox.tsx",
+        "hasTests": true,
+        "testFiles": ["src/components/SearchBox.test.tsx"],
+        "untestedPaths": [
+          {
+            "type": "branch",
+            "location": "User typing behavior simulation",
+            "priority": "high",
+            "reasoning": "Debounce behavior not tested",
+            "suggestedTest": "Test that API calls are debounced when user types quickly"
+          }
+        ],
+        "coverageEstimate": 75,
+        "summary": "Component has basic test coverage but missing user interaction tests"
+      },
+      "refactorings": {
+        "file": "src/components/SearchBox.tsx",
+        "suggestions": [
+          {
+            "type": "simplify",
+            "location": "Conditional rendering logic lines 20-28",
+            "impact": "low",
+            "description": "Simplify nested ternary operators",
+            "before": "isLoading ? <Spinner/> : error ? <Error/> : results.length > 0 ? <List/> : <Empty/>",
+            "after": "if(isLoading) return <Spinner/>; if(error) return <Error/>; return results.length > 0 ? <List/> : <Empty/>;",
+            "benefits": "Improved readability and maintainability"
+          }
+        ],
+        "summary": "Minor code quality improvements for readability"
       }
     }
   ],
   "summary": {
-    "totalFiles": 1,
-    "overallScore": 80,
+    "totalFiles": 2,
+    "overallScore": 76,
     "criticalIssues": 0,
-    "highPriorityTests": 0,
-    "refactoringOpportunities": 0
+    "highPriorityTests": 2,
+    "refactoringOpportunities": 4
   },
-  "recommendations": [],
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "performance",
+      "description": "Implement search query optimization - current O(n) search will not scale",
+      "files": ["src/services/searchService.ts"]
+    },
+    {
+      "priority": "high",
+      "category": "testing",
+      "description": "Add error handling tests for search service database failures",
+      "files": ["src/services/searchService.test.ts"]
+    },
+    {
+      "priority": "medium",
+      "category": "best-practice",
+      "description": "Add debounce to search input to reduce unnecessary API calls",
+      "files": ["src/components/SearchBox.tsx"]
+    }
+  ],
   "metadata": {
-    "analyzedAt": "2026-11-23T06:38:43.018Z",
-    "duration": 11,
+    "analyzedAt": "2026-11-23T11:15:47.709Z",
+    "duration": 119315,
     "agentVersions": {
       "code-quality-analyzer": "1.0.0",
       "test-coverage-analyzer": "1.0.0",

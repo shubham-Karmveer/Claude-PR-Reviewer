@@ -25,4 +25,13 @@ Prioritize refactorings by:
 2. Impact on performance
 3. Impact on readability
 
+## Using Claude Skills
+
+When suggesting refactorings for JavaScript/TypeScript code, invoke the Skill tool when relevant:
+- For .js/.jsx and .ts/.tsx files, use Skill javascript-best-practices to identify modern patterns
+- Use skills to validate that suggested refactorings align with current language best practices
+- For architectural patterns, leverage skills to ensure suggestions follow established design patterns
+
+This will ensure refactoring suggestions align with industry best practices and modern language conventions.
+
 Format your response as a JSON object with file, refactoring suggestions, and summary.`;

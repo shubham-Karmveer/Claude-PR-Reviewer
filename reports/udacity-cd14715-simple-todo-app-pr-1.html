@@ -3,76 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Review Report</title>
+  <title>Code Review Report - PR #1</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 24px;
-      background: #f8f9fa;
-      color: #212529;
-    }
-    h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 12px; }
-    .summary {
-      background: white;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin: 24px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-    .metric { text-align: center; }
-    .metric-value { font-size: 2em; font-weight: bold; color: #3498db; }
-    .metric-label { color: #6c757d; font-size: 0.9em; }
-    ul { list-style: none; padding: 0; }
-    li { padding: 12px; margin: 8px 0; border-radius: 4px; background: white; }
-    .rec-critical { border-left: 4px solid #e74c3c; }
-    .rec-high { border-left: 4px solid #f39c12; }
-    .rec-medium { border-left: 4px solid #3498db; }
-    .rec-low { border-left: 4px solid #27ae60; }
-    .priority { font-weight: bold; margin-right: 8px; }
-    .rec-critical .priority { color: #e74c3c; }
-    .rec-high .priority { color: #f39c12; }
-    .rec-medium .priority { color: #3498db; }
-    .rec-low .priority { color: #27ae60; }
-    footer { text-align: center; color: #6c757d; margin-top: 32px; font-size: 0.9em; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #2196F3; padding-bottom: 10px; }
+    h2 { color: #1976D2; margin-top: 30px; }
+    .score-card { background: #4CAF50; color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+    .score-value { font-size: 48px; font-weight: bold; }
+    .score-label { font-size: 18px; opacity: 0.9; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .issue { margin: 15px 0; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; }
+    .issue.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .issue.high { background: #fff3cd; border-left-color: #ff9800; }
+    .issue.medium { background: #d1ecf1; border-left-color: #17a2b8; }
+    .issue.low { background: #d4edda; border-left-color: #28a745; }
+    .severity { display: inline-block; padding: 2px 8px; border-radius: 3px; font-weight: 600; font-size: 12px; }
+    .severity.critical { background: #dc3545; color: white; }
+    .severity.high { background: #ff9800; color: white; }
+    .severity.medium { background: #17a2b8; color: white; }
+    .severity.low { background: #28a745; color: white; }
+    .recommendation { margin: 15px 0; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196F3; border-radius: 4px; }
+    .recommendation.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .recommendation.high { background: #fff3cd; border-left-color: #ff9800; }
+    .file-section { margin: 25px 0; padding: 15px; background: #f9f9f9; border-radius: 4px; border: 1px solid #ddd; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
   </style>
 </head>
 <body>
-  <h1>🔍 Code Review Report</h1>
-  
-  <div class="summary">
-    <div class="metric">
-      <div class="metric-value">80</div>
-      <div class="metric-label">Overall Score</div>
+  <div class="container">
+    <h1>🔍 Code Review Report - PR #1</h1>
+    <div class="score-card">
+      <div class="score-label">Overall Score</div>
+      <div class="score-value">93/100</div>
     </div>
-    <div class="metric">
-      <div class="metric-value">1</div>
-      <div class="metric-label">Files Reviewed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Critical Issues</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Tests Needed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Refactorings</div>
-    </div>
+    
+    <h2>📊 Summary</h2>
+    <table>
+      <tr>
+        <th>Metric</th><th>Value</th>
+      </tr>
+      <tr>
+        <td>Files Reviewed</td><td>2</td>
+      </tr>
+      <tr>
+        <td>Critical Issues</td><td>0</td>
+      </tr>
+      <tr>
+        <td>High Priority Tests</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Refactoring Opportunities</td><td>1</td>
+      </tr>
+    </table>
+    
+    <h2>🎯 Recommendations</h2><div class="recommendation low">
+        <strong>LOW</strong> - best-practice<br>
+        Add comprehensive JSDoc comments to exported fixture functions<br>
+        <small>Files: src/fixtures/index.ts</small>
+      </div><h2>📁 File Details</h2><div class="file-section">
+      <h3>src/utils/cleanup.test.ts</h3>
+      <table>
+        <tr><td>Quality Score</td><td>95/100</td></tr>
+        <tr><td>Test Coverage</td><td>~100%</td></tr>
+      </table>
+      
+      <h4>Issues (0)</h4><p>None found</p><h4>Test Gaps (0)</h4><p>None found</p><h4>Refactoring Opportunities (0)</h4><p>None found</p></div><div class="file-section">
+      <h3>src/fixtures/index.ts</h3>
+      <table>
+        <tr><td>Quality Score</td><td>92/100</td></tr>
+        <tr><td>Test Coverage</td><td>~100%</td></tr>
+      </table>
+      
+      <h4>Issues (1)</h4><div class="issue low">
+          <span class="severity low">LOW</span>
+          <strong>Line 12:</strong> Missing JSDoc comment for exported function<br>
+          <small>Suggestion: Add JSDoc comment explaining fixture purpose and usage</small>
+        </div><h4>Test Gaps (0)</h4><p>None found</p><h4>Refactoring Opportunities (1)</h4><div class="issue low">
+          <strong>modernize:</strong> Consider using TypeScript generics for reusable fixture factories<br>
+          Impact: low<br>
+          Benefits: Better type safety and reusability across different test suites
+        </div></div><div class="footer">
+    <p>Generated at 2026-11-23T11:12:55.612Z • Duration: 36725ms</p>
   </div>
-
-  <h2>🎯 Top Recommendations</h2>
-  <ul><li>No recommendations at this time.</li></ul>
-
-  <footer>
-    Generated at 2026-11-23T06:37:04.839Z • Duration: 8ms
-  </footer>
+  </div>
 </body>
 </html>

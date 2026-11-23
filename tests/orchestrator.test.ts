@@ -1,17 +1,91 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { CodeReviewOrchestrator } from '../src/orchestrator';
 import { ReviewReportSchema } from '../src/types/report-types';
 
 /**
  * Tests for CodeReviewOrchestrator
  *
- * TODO: Implement these tests
- *
- * Tips:
- * - Use vitest mocking for MCP servers
- * - Mock rate limiter to avoid delays
- * - Test both success and failure paths
+ * These tests mock the Claude Agent SDK query() function to avoid making real API calls
+ * and test the orchestrator's ability to aggregate results and validate schemas.
  */
+
+// Mock the Claude Agent SDK
+let callCount = 0;
+
+vi.mock('@anthropic-ai/claude-agent-sdk', () => ({
+  query: vi.fn(async function* mockQuery() {
+    // Return different outputs based on which call this is (each agent type)
+    // Call 1: Code Quality, Call 2: Test Coverage, Call 3: Refactoring
+
+    const mockCodeQualityOutput = JSON.stringify([
+      {
+        file: 'src/example.ts',
+        issues: [
+          {
+            line: 10,
+            severity: 'high',
+            category: 'security',
+            description: 'Potential SQL injection vulnerability',
+            suggestion: 'Use parameterized queries'
+          }
+        ],
+        overallScore: 75,
+        summary: 'Found security issues in file'
+      }
+    ]);
+
+    const mockTestCoverageOutput = JSON.stringify([
+      {
+        file: 'src/example.ts',
+        hasTests: false,
+        testFiles: [],
+        untestedPaths: [
+          {
+            type: 'function' as const,
+            location: 'queryDatabase() at line 10',
+            priority: 'high' as const,
+            reasoning: 'Database interaction functions should be tested',
+            suggestedTest: 'Test queryDatabase with mock database connection'
+          }
+        ],
+        coverageEstimate: 50,
+        summary: 'Missing tests for critical paths'
+      }
+    ]);
+
+    const mockRefactoringOutput = JSON.stringify([
+      {
+        file: 'src/example.ts',
+        suggestions: [
+          {
+            type: 'extract-function' as const,
+            location: 'queryDatabase() at line 10',
+            impact: 'medium' as const,
+            description: 'Extract database query logic into separate utility',
+            before: 'const result = db.query(sql)',
+            after: 'const result = queryDB(sql)',
+            benefits: 'Better testability and reusability'
+          }
+        ],
+        summary: 'Found opportunities to improve code organization'
+      }
+    ]);
+
+    callCount++;
+    let output = mockCodeQualityOutput;
+
+    if (callCount % 3 === 2) {
+      output = mockTestCoverageOutput;
+    } else if (callCount % 3 === 0) {
+      output = mockRefactoringOutput;
+    }
+
+    yield {
+      type: 'assistant',
+      content: output
+    };
+  })
+}));
 
 describe('CodeReviewOrchestrator', () => {
   describe('Configuration', () => {
@@ -28,8 +102,13 @@ describe('CodeReviewOrchestrator', () => {
   });
 
   describe('reviewPullRequest', () => {
+    beforeEach(() => {
+      vi.clearAllMocks();
+      callCount = 0; // Reset call counter for each test
+    });
+
     it('should return a ReviewReport', async () => {
-      const orchestrator = new CodeReviewOrchestrator();
+      const orchestrator = new CodeReviewOrchestrator({ enablePRComment: false });
       const report = await orchestrator.reviewPullRequest('test', 'repo', 1);
 
       expect(report).toBeDefined();
@@ -40,7 +119,7 @@ describe('CodeReviewOrchestrator', () => {
     });
 
     it('should include fileReviews in the report', async () => {
-      const orchestrator = new CodeReviewOrchestrator();
+      const orchestrator = new CodeReviewOrchestrator({ enablePRComment: false });
       const report = await orchestrator.reviewPullRequest('test', 'repo', 1);
 
       expect(report.fileReviews).toBeDefined();
@@ -48,7 +127,7 @@ describe('CodeReviewOrchestrator', () => {
     });
 
     it('should include summary in the report', async () => {
-      const orchestrator = new CodeReviewOrchestrator();
+      const orchestrator = new CodeReviewOrchestrator({ enablePRComment: false });
       const report = await orchestrator.reviewPullRequest('test', 'repo', 1);
 
       expect(report.summary).toBeDefined();
@@ -57,7 +136,7 @@ describe('CodeReviewOrchestrator', () => {
     });
 
     it('should include metadata in the report', async () => {
-      const orchestrator = new CodeReviewOrchestrator();
+      const orchestrator = new CodeReviewOrchestrator({ enablePRComment: false });
       const report = await orchestrator.reviewPullRequest('test', 'repo', 1);
 
       expect(report.metadata).toBeDefined();
@@ -67,7 +146,7 @@ describe('CodeReviewOrchestrator', () => {
     });
 
     it('should validate output with Zod schema', async () => {
-      const orchestrator = new CodeReviewOrchestrator();
+      const orchestrator = new CodeReviewOrchestrator({ enablePRComment: false });
       const report = await orchestrator.reviewPullRequest('test', 'repo', 1);
 
       // This should not throw if the schema is valid

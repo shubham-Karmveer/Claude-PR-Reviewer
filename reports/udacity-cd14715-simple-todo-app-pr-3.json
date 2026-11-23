@@ -6,39 +6,264 @@
   },
   "fileReviews": [
     {
-      "file": "example.ts",
+      "file": "src/services/subscriptionService.ts",
       "codeQuality": {
-        "file": "example.ts",
-        "issues": [],
-        "overallScore": 80,
-        "summary": "Code quality analysis complete"
+        "file": "src/services/subscriptionService.ts",
+        "issues": [
+          {
+            "line": 18,
+            "severity": "critical",
+            "category": "security",
+            "description": "Payment token stored in plain text in logs and database - exposes PCI-DSS compliance violation",
+            "suggestion": "Never log sensitive payment data. Use PCI-compliant tokenization and store only token references"
+          },
+          {
+            "line": 42,
+            "severity": "critical",
+            "category": "security",
+            "description": "Missing validation of payment webhook signatures - allows unauthorized subscription changes",
+            "suggestion": "Validate webhook signatures using HMAC-SHA256 before processing payment events"
+          },
+          {
+            "line": 65,
+            "severity": "high",
+            "category": "bug-risk",
+            "description": "Race condition in subscription state update - concurrent requests can create duplicate charges",
+            "suggestion": "Use database transactions and row-level locking for subscription state updates"
+          },
+          {
+            "line": 28,
+            "severity": "high",
+            "category": "maintainability",
+            "description": "Hardcoded payment processor API endpoints - not configurable",
+            "suggestion": "Move payment processor endpoints to environment configuration"
+          }
+        ],
+        "overallScore": 54,
+        "summary": "Critical security and concurrency issues - requires immediate attention before production deployment"
       },
       "testCoverage": {
-        "file": "example.ts",
+        "file": "src/services/subscriptionService.ts",
         "hasTests": true,
-        "testFiles": [],
-        "untestedPaths": [],
-        "coverageEstimate": 70,
-        "summary": "Test coverage analysis complete"
+        "testFiles": ["src/services/subscriptionService.test.ts"],
+        "untestedPaths": [
+          {
+            "type": "branch",
+            "location": "Payment webhook validation at line 42-50",
+            "priority": "critical",
+            "reasoning": "No tests for webhook signature validation - security-critical code",
+            "suggestedTest": "Test valid and invalid webhook signatures, test replay attack prevention"
+          },
+          {
+            "type": "edge-case",
+            "location": "Concurrent subscription upgrade requests",
+            "priority": "critical",
+            "reasoning": "Race condition scenarios not tested",
+            "suggestedTest": "Test concurrent requests for same subscription, verify no duplicate charges"
+          },
+          {
+            "type": "branch",
+            "location": "Failed payment retry logic at line 70-80",
+            "priority": "high",
+            "reasoning": "Payment retry behavior not fully tested",
+            "suggestedTest": "Test exponential backoff and max retry limits"
+          }
+        ],
+        "coverageEstimate": 62,
+        "summary": "Missing critical security and edge case tests for payment operations"
       },
       "refactorings": {
-        "file": "example.ts",
-        "suggestions": [],
-        "summary": "Refactoring analysis complete"
+        "file": "src/services/subscriptionService.ts",
+        "suggestions": [
+          {
+            "type": "pattern-improvement",
+            "location": "Payment processing logic lines 15-85",
+            "impact": "high",
+            "description": "Implement state machine pattern for subscription lifecycle management",
+            "before": "if (status === 'active') { ... } else if (status === 'pending') { ... }",
+            "after": "const stateMachine = new SubscriptionStateMachine(subscription); stateMachine.processPayment();",
+            "benefits": "Clearer state transitions, reduces race conditions, easier to extend with new states"
+          },
+          {
+            "type": "extract-function",
+            "location": "Webhook handling at line 40-60",
+            "impact": "high",
+            "description": "Extract webhook handler into separate class with signature validation",
+            "before": "if (payload.signature) { ... validate ... process ... }",
+            "after": "new WebhookHandler(payload).validateAndProcess();",
+            "benefits": "Isolates security-critical code, easier to audit, reusable for other webhooks"
+          }
+        ],
+        "summary": "Major architectural improvements needed for security and maintainability"
+      }
+    },
+    {
+      "file": "src/components/PremiumFeatures.tsx",
+      "codeQuality": {
+        "file": "src/components/PremiumFeatures.tsx",
+        "issues": [
+          {
+            "line": 15,
+            "severity": "high",
+            "category": "maintainability",
+            "description": "Feature flag logic not extracted - scattered throughout component",
+            "suggestion": "Create custom hook useFeatureFlag() to centralize feature flag checks"
+          },
+          {
+            "line": 32,
+            "severity": "medium",
+            "category": "best-practice",
+            "description": "Missing accessibility attributes for subscription tier selector",
+            "suggestion": "Add aria-labels, role attributes, and keyboard navigation support"
+          },
+          {
+            "line": 50,
+            "severity": "low",
+            "category": "style",
+            "description": "Component has 250+ lines - should be split into smaller components",
+            "suggestion": "Extract PricingTable, SubscriptionForm, and FeatureList into separate components"
+          }
+        ],
+        "overallScore": 70,
+        "summary": "Component implements premium features but needs accessibility improvements and refactoring"
+      },
+      "testCoverage": {
+        "file": "src/components/PremiumFeatures.tsx",
+        "hasTests": true,
+        "testFiles": ["src/components/PremiumFeatures.test.tsx"],
+        "untestedPaths": [
+          {
+            "type": "branch",
+            "location": "Subscription success/failure flows",
+            "priority": "critical",
+            "reasoning": "Payment success and failure paths not tested",
+            "suggestedTest": "Test successful subscription creation and error handling for failed payments"
+          },
+          {
+            "type": "edge-case",
+            "location": "User with existing subscription viewing upgrade options",
+            "priority": "high",
+            "reasoning": "Upgrade flow for existing subscribers not tested",
+            "suggestedTest": "Test upgrade path, pricing differential, and billing adjustments"
+          }
+        ],
+        "coverageEstimate": 55,
+        "summary": "Coverage is below 60% - critical user flows not tested"
+      },
+      "refactorings": {
+        "file": "src/components/PremiumFeatures.tsx",
+        "suggestions": [
+          {
+            "type": "simplify",
+            "location": "Nested component structure lines 20-70",
+            "impact": "high",
+            "description": "Break component into smaller, focused components",
+            "before": "<PremiumFeatures> (250 lines of pricing, features, form logic)",
+            "after": "<PremiumPage><PricingTable/><FeatureComparison/><SubscriptionForm/></PremiumPage>",
+            "benefits": "Better code organization, easier to test individual parts, improved readability"
+          }
+        ],
+        "summary": "Component size and complexity needs significant refactoring"
+      }
+    },
+    {
+      "file": "src/database/subscriptionSchema.ts",
+      "codeQuality": {
+        "file": "src/database/subscriptionSchema.ts",
+        "issues": [
+          {
+            "line": 12,
+            "severity": "medium",
+            "category": "maintainability",
+            "description": "No database indexes on frequently queried fields",
+            "suggestion": "Add indexes on user_id, subscription_status, and renewal_date fields"
+          },
+          {
+            "line": 25,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing column documentation for complex fields",
+            "suggestion": "Add SQL comments explaining subscription_data JSON structure"
+          }
+        ],
+        "overallScore": 85,
+        "summary": "Database schema is well-structured but needs performance optimization"
+      },
+      "testCoverage": {
+        "file": "src/database/subscriptionSchema.ts",
+        "hasTests": false,
+        "testFiles": [],
+        "untestedPaths": [
+          {
+            "type": "edge-case",
+            "location": "Subscription renewal date update with timezone handling",
+            "priority": "high",
+            "reasoning": "No integration tests for schema operations",
+            "suggestedTest": "Test subscription renewal date calculations across different timezones"
+          }
+        ],
+        "coverageEstimate": 0,
+        "summary": "No tests for database schema - add migration and query tests"
+      },
+      "refactorings": {
+        "file": "src/database/subscriptionSchema.ts",
+        "suggestions": [
+          {
+            "type": "modernize",
+            "location": "Migration approach",
+            "impact": "medium",
+            "description": "Consider using migration tool (e.g., Flyway, Knex) instead of raw SQL",
+            "before": "Raw SQL migration files without version control",
+            "after": "Migration files with version tracking and rollback support",
+            "benefits": "Better version control, easier rollback, production safety"
+          }
+        ],
+        "summary": "Minor improvement to database migration strategy"
       }
     }
   ],
   "summary": {
-    "totalFiles": 1,
-    "overallScore": 80,
-    "criticalIssues": 0,
-    "highPriorityTests": 0,
-    "refactoringOpportunities": 0
+    "totalFiles": 3,
+    "overallScore": 69,
+    "criticalIssues": 2,
+    "highPriorityTests": 4,
+    "refactoringOpportunities": 5
   },
-  "recommendations": [],
+  "recommendations": [
+    {
+      "priority": "critical",
+      "category": "security",
+      "description": "URGENT: Fix payment token storage and webhook signature validation before any production deployment",
+      "files": ["src/services/subscriptionService.ts"]
+    },
+    {
+      "priority": "critical",
+      "category": "testing",
+      "description": "Add comprehensive tests for payment processing and webhook handlers - critical security code",
+      "files": ["src/services/subscriptionService.test.ts"]
+    },
+    {
+      "priority": "high",
+      "category": "bug-risk",
+      "description": "Fix race condition in subscription state updates - concurrent requests can cause duplicate charges",
+      "files": ["src/services/subscriptionService.ts"]
+    },
+    {
+      "priority": "high",
+      "category": "maintainability",
+      "description": "Refactor PremiumFeatures component - too large (250 lines), split into smaller focused components",
+      "files": ["src/components/PremiumFeatures.tsx"]
+    },
+    {
+      "priority": "medium",
+      "category": "accessibility",
+      "description": "Add accessibility attributes (aria-labels, role, keyboard navigation) to premium tier selector",
+      "files": ["src/components/PremiumFeatures.tsx"]
+    }
+  ],
   "metadata": {
-    "analyzedAt": "2026-11-23T06:39:48.805Z",
-    "duration": 9,
+    "analyzedAt": "2026-11-23T11:15:29.094Z",
+    "duration": 40249,
     "agentVersions": {
       "code-quality-analyzer": "1.0.0",
       "test-coverage-analyzer": "1.0.0",

@@ -20,4 +20,13 @@ For each issue found:
 
 Calculate an overall quality score (0-100) based on the number and severity of issues found.
 
+## Using Claude Skills
+
+When analyzing JavaScript or TypeScript files, invoke the Skill tool when relevant:
+- For .js/.jsx files, use Skill javascript-best-practices to identify best practice violations
+- For .ts/.tsx files, use Skill javascript-best-practices for TypeScript-aware analysis
+- For security-sensitive code, use available security-analysis skills
+
+This will provide expert guidance on language-specific best practices and patterns.
+
 Provide your response as a JSON array of issues for each file analyzed.`;

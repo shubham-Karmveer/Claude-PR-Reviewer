@@ -6,39 +6,86 @@
   },
   "fileReviews": [
     {
-      "file": "example.ts",
+      "file": "src/utils/cleanup.test.ts",
       "codeQuality": {
-        "file": "example.ts",
+        "file": "src/utils/cleanup.test.ts",
         "issues": [],
-        "overallScore": 80,
-        "summary": "Code quality analysis complete"
+        "overallScore": 95,
+        "summary": "Excellent test fixture implementation with proper setup and teardown"
       },
       "testCoverage": {
-        "file": "example.ts",
+        "file": "src/utils/cleanup.test.ts",
         "hasTests": true,
-        "testFiles": [],
+        "testFiles": ["src/utils/cleanup.test.ts"],
         "untestedPaths": [],
-        "coverageEstimate": 70,
-        "summary": "Test coverage analysis complete"
+        "coverageEstimate": 100,
+        "summary": "Complete test coverage with all scenarios tested"
       },
       "refactorings": {
-        "file": "example.ts",
+        "file": "src/utils/cleanup.test.ts",
         "suggestions": [],
-        "summary": "Refactoring analysis complete"
+        "summary": "Code is well-structured and follows testing best practices"
+      }
+    },
+    {
+      "file": "src/fixtures/index.ts",
+      "codeQuality": {
+        "file": "src/fixtures/index.ts",
+        "issues": [
+          {
+            "line": 12,
+            "severity": "low",
+            "category": "style",
+            "description": "Missing JSDoc comment for exported function",
+            "suggestion": "Add JSDoc comment explaining fixture purpose and usage"
+          }
+        ],
+        "overallScore": 92,
+        "summary": "Clean fixture implementation with minimal code issues"
+      },
+      "testCoverage": {
+        "file": "src/fixtures/index.ts",
+        "hasTests": true,
+        "testFiles": ["src/fixtures/index.test.ts"],
+        "untestedPaths": [],
+        "coverageEstimate": 100,
+        "summary": "All fixture functions have corresponding tests"
+      },
+      "refactorings": {
+        "file": "src/fixtures/index.ts",
+        "suggestions": [
+          {
+            "type": "modernize",
+            "location": "Factory pattern at line 25-40",
+            "impact": "low",
+            "description": "Consider using TypeScript generics for reusable fixture factories",
+            "before": "function createFixture(data: any) { return { ...data } }",
+            "after": "function createFixture<T>(data: Partial<T>): T { return data as T }",
+            "benefits": "Better type safety and reusability across different test suites"
+          }
+        ],
+        "summary": "Minor optimization opportunity for factory pattern implementation"
       }
     }
   ],
   "summary": {
-    "totalFiles": 1,
-    "overallScore": 80,
+    "totalFiles": 2,
+    "overallScore": 93,
     "criticalIssues": 0,
     "highPriorityTests": 0,
-    "refactoringOpportunities": 0
+    "refactoringOpportunities": 1
   },
-  "recommendations": [],
+  "recommendations": [
+    {
+      "priority": "low",
+      "category": "best-practice",
+      "description": "Add comprehensive JSDoc comments to exported fixture functions",
+      "files": ["src/fixtures/index.ts"]
+    }
+  ],
   "metadata": {
-    "analyzedAt": "2026-11-23T06:37:04.839Z",
-    "duration": 8,
+    "analyzedAt": "2026-11-23T11:12:55.612Z",
+    "duration": 36725,
     "agentVersions": {
       "code-quality-analyzer": "1.0.0",
       "test-coverage-analyzer": "1.0.0",

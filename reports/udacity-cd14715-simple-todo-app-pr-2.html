@@ -3,76 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Review Report</title>
+  <title>Code Review Report - PR #2</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 24px;
-      background: #f8f9fa;
-      color: #212529;
-    }
-    h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 12px; }
-    .summary {
-      background: white;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin: 24px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-    .metric { text-align: center; }
-    .metric-value { font-size: 2em; font-weight: bold; color: #3498db; }
-    .metric-label { color: #6c757d; font-size: 0.9em; }
-    ul { list-style: none; padding: 0; }
-    li { padding: 12px; margin: 8px 0; border-radius: 4px; background: white; }
-    .rec-critical { border-left: 4px solid #e74c3c; }
-    .rec-high { border-left: 4px solid #f39c12; }
-    .rec-medium { border-left: 4px solid #3498db; }
-    .rec-low { border-left: 4px solid #27ae60; }
-    .priority { font-weight: bold; margin-right: 8px; }
-    .rec-critical .priority { color: #e74c3c; }
-    .rec-high .priority { color: #f39c12; }
-    .rec-medium .priority { color: #3498db; }
-    .rec-low .priority { color: #27ae60; }
-    footer { text-align: center; color: #6c757d; margin-top: 32px; font-size: 0.9em; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #2196F3; padding-bottom: 10px; }
+    h2 { color: #1976D2; margin-top: 30px; }
+    .score-card { background: #FF9800; color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+    .score-value { font-size: 48px; font-weight: bold; }
+    .score-label { font-size: 18px; opacity: 0.9; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .issue { margin: 15px 0; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; }
+    .issue.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .issue.high { background: #fff3cd; border-left-color: #ff9800; }
+    .issue.medium { background: #d1ecf1; border-left-color: #17a2b8; }
+    .issue.low { background: #d4edda; border-left-color: #28a745; }
+    .severity { display: inline-block; padding: 2px 8px; border-radius: 3px; font-weight: 600; font-size: 12px; }
+    .severity.critical { background: #dc3545; color: white; }
+    .severity.high { background: #ff9800; color: white; }
+    .severity.medium { background: #17a2b8; color: white; }
+    .severity.low { background: #28a745; color: white; }
+    .recommendation { margin: 15px 0; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196F3; border-radius: 4px; }
+    .recommendation.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .recommendation.high { background: #fff3cd; border-left-color: #ff9800; }
+    .file-section { margin: 25px 0; padding: 15px; background: #f9f9f9; border-radius: 4px; border: 1px solid #ddd; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
   </style>
 </head>
 <body>
-  <h1>🔍 Code Review Report</h1>
-  
-  <div class="summary">
-    <div class="metric">
-      <div class="metric-value">80</div>
-      <div class="metric-label">Overall Score</div>
+  <div class="container">
+    <h1>🔍 Code Review Report - PR #2</h1>
+    <div class="score-card">
+      <div class="score-label">Overall Score</div>
+      <div class="score-value">76/100</div>
     </div>
-    <div class="metric">
-      <div class="metric-value">1</div>
-      <div class="metric-label">Files Reviewed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Critical Issues</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Tests Needed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Refactorings</div>
-    </div>
+    
+    <h2>📊 Summary</h2>
+    <table>
+      <tr>
+        <th>Metric</th><th>Value</th>
+      </tr>
+      <tr>
+        <td>Files Reviewed</td><td>2</td>
+      </tr>
+      <tr>
+        <td>Critical Issues</td><td>0</td>
+      </tr>
+      <tr>
+        <td>High Priority Tests</td><td>2</td>
+      </tr>
+      <tr>
+        <td>Refactoring Opportunities</td><td>4</td>
+      </tr>
+    </table>
+    
+    <h2>🎯 Recommendations</h2><div class="recommendation high">
+        <strong>HIGH</strong> - performance<br>
+        Implement search query optimization - current O(n) search will not scale<br>
+        <small>Files: src/services/searchService.ts</small>
+      </div><div class="recommendation high">
+        <strong>HIGH</strong> - testing<br>
+        Add error handling tests for search service database failures<br>
+        <small>Files: src/services/searchService.test.ts</small>
+      </div><div class="recommendation medium">
+        <strong>MEDIUM</strong> - best-practice<br>
+        Add debounce to search input to reduce unnecessary API calls<br>
+        <small>Files: src/components/SearchBox.tsx</small>
+      </div><h2>📁 File Details</h2><div class="file-section">
+      <h3>src/services/searchService.ts</h3>
+      <table>
+        <tr><td>Quality Score</td><td>72/100</td></tr>
+        <tr><td>Test Coverage</td><td>~68%</td></tr>
+      </table>
+      
+      <h4>Issues (3)</h4><div class="issue high">
+          <span class="severity high">HIGH</span>
+          <strong>Line 24:</strong> Using linear search O(n) instead of indexed search - will cause performance degradation with large datasets<br>
+          <small>Suggestion: Implement search index or use database native full-text search capabilities</small>
+        </div><div class="issue medium">
+          <span class="severity medium">MEDIUM</span>
+          <strong>Line 45:</strong> Complex query logic is not extracted into separate functions<br>
+          <small>Suggestion: Extract filter and sort logic into separate utility functions for reusability</small>
+        </div><div class="issue low">
+          <span class="severity low">LOW</span>
+          <strong>Line 18:</strong> Missing input validation for search parameters<br>
+          <small>Suggestion: Add schema validation for search query to prevent invalid inputs</small>
+        </div><h4>Test Gaps (2)</h4><div class="issue medium">
+          <strong>branch:</strong> Error handling on line 50-55<br>
+          Priority: high<br>
+          Suggested: Mock database failures and verify error handling
+        </div><div class="issue medium">
+          <strong>edge-case:</strong> Empty search results case<br>
+          Priority: medium<br>
+          Suggested: Test with query that matches no items
+        </div><h4>Refactoring Opportunities (2)</h4><div class="issue low">
+          <strong>extract-function:</strong> Extract query builder into separate SearchQueryBuilder class<br>
+          Impact: high<br>
+          Benefits: Improves readability, makes logic testable, enables complex query support
+        </div><div class="issue low">
+          <strong>modernize:</strong> Replace string concatenation with SQL parameter binding<br>
+          Impact: medium<br>
+          Benefits: Prevents SQL injection, better database performance
+        </div></div><div class="file-section">
+      <h3>src/components/SearchBox.tsx</h3>
+      <table>
+        <tr><td>Quality Score</td><td>80/100</td></tr>
+        <tr><td>Test Coverage</td><td>~75%</td></tr>
+      </table>
+      
+      <h4>Issues (2)</h4><div class="issue medium">
+          <span class="severity medium">MEDIUM</span>
+          <strong>Line 12:</strong> Missing debounce on search input - triggers API call on every keystroke<br>
+          <small>Suggestion: Implement debounce with 300-500ms delay to reduce API calls</small>
+        </div><div class="issue low">
+          <span class="severity low">LOW</span>
+          <strong>Line 35:</strong> Magic numbers used for styling<br>
+          <small>Suggestion: Move hardcoded values to constants or CSS classes</small>
+        </div><h4>Test Gaps (1)</h4><div class="issue medium">
+          <strong>branch:</strong> User typing behavior simulation<br>
+          Priority: high<br>
+          Suggested: Test that API calls are debounced when user types quickly
+        </div><h4>Refactoring Opportunities (1)</h4><div class="issue low">
+          <strong>simplify:</strong> Simplify nested ternary operators<br>
+          Impact: low<br>
+          Benefits: Improved readability and maintainability
+        </div></div><div class="footer">
+    <p>Generated at 2026-11-23T11:15:47.709Z • Duration: 119315ms</p>
   </div>
-
-  <h2>🎯 Top Recommendations</h2>
-  <ul><li>No recommendations at this time.</li></ul>
-
-  <footer>
-    Generated at 2026-11-23T06:38:43.018Z • Duration: 11ms
-  </footer>
+  </div>
 </body>
 </html>

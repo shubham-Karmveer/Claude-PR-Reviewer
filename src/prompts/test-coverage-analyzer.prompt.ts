@@ -25,4 +25,12 @@ Look for:
 
 Provide an estimated coverage percentage (0-100) based on the analysis.
 
+## Using Claude Skills
+
+When analyzing test cases and coverage patterns for JavaScript/TypeScript, invoke the Skill tool when relevant:
+- For .js/.jsx and .ts/.tsx files, use Skill javascript-best-practices to identify testing best practices
+- Use skills to validate that proposed test cases follow framework conventions
+
+This will ensure suggested test cases follow language and framework best practices.
+
 Format your response as a JSON object with file, test coverage info, and suggested test cases.`;

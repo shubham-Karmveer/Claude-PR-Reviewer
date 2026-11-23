@@ -3,76 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Review Report</title>
+  <title>Code Review Report - PR #3</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 24px;
-      background: #f8f9fa;
-      color: #212529;
-    }
-    h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 12px; }
-    .summary {
-      background: white;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin: 24px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-    .metric { text-align: center; }
-    .metric-value { font-size: 2em; font-weight: bold; color: #3498db; }
-    .metric-label { color: #6c757d; font-size: 0.9em; }
-    ul { list-style: none; padding: 0; }
-    li { padding: 12px; margin: 8px 0; border-radius: 4px; background: white; }
-    .rec-critical { border-left: 4px solid #e74c3c; }
-    .rec-high { border-left: 4px solid #f39c12; }
-    .rec-medium { border-left: 4px solid #3498db; }
-    .rec-low { border-left: 4px solid #27ae60; }
-    .priority { font-weight: bold; margin-right: 8px; }
-    .rec-critical .priority { color: #e74c3c; }
-    .rec-high .priority { color: #f39c12; }
-    .rec-medium .priority { color: #3498db; }
-    .rec-low .priority { color: #27ae60; }
-    footer { text-align: center; color: #6c757d; margin-top: 32px; font-size: 0.9em; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #2196F3; padding-bottom: 10px; }
+    h2 { color: #1976D2; margin-top: 30px; }
+    .score-card { background: #FF9800; color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+    .score-value { font-size: 48px; font-weight: bold; }
+    .score-label { font-size: 18px; opacity: 0.9; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .issue { margin: 15px 0; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; }
+    .issue.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .issue.high { background: #fff3cd; border-left-color: #ff9800; }
+    .issue.medium { background: #d1ecf1; border-left-color: #17a2b8; }
+    .issue.low { background: #d4edda; border-left-color: #28a745; }
+    .severity { display: inline-block; padding: 2px 8px; border-radius: 3px; font-weight: 600; font-size: 12px; }
+    .severity.critical { background: #dc3545; color: white; }
+    .severity.high { background: #ff9800; color: white; }
+    .severity.medium { background: #17a2b8; color: white; }
+    .severity.low { background: #28a745; color: white; }
+    .recommendation { margin: 15px 0; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196F3; border-radius: 4px; }
+    .recommendation.critical { background: #f8d7da; border-left-color: #dc3545; }
+    .recommendation.high { background: #fff3cd; border-left-color: #ff9800; }
+    .file-section { margin: 25px 0; padding: 15px; background: #f9f9f9; border-radius: 4px; border: 1px solid #ddd; }
+    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
   </style>
 </head>
 <body>
-  <h1>🔍 Code Review Report</h1>
-  
-  <div class="summary">
-    <div class="metric">
-      <div class="metric-value">80</div>
-      <div class="metric-label">Overall Score</div>
+  <div class="container">
+    <h1>🔍 Code Review Report - PR #3</h1>
+    <div class="score-card">
+      <div class="score-label">Overall Score</div>
+      <div class="score-value">69/100</div>
     </div>
-    <div class="metric">
-      <div class="metric-value">1</div>
-      <div class="metric-label">Files Reviewed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Critical Issues</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Tests Needed</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0</div>
-      <div class="metric-label">Refactorings</div>
-    </div>
+    
+    <h2>📊 Summary</h2>
+    <table>
+      <tr>
+        <th>Metric</th><th>Value</th>
+      </tr>
+      <tr>
+        <td>Files Reviewed</td><td>3</td>
+      </tr>
+      <tr>
+        <td>Critical Issues</td><td>2</td>
+      </tr>
+      <tr>
+        <td>High Priority Tests</td><td>4</td>
+      </tr>
+      <tr>
+        <td>Refactoring Opportunities</td><td>5</td>
+      </tr>
+    </table>
+    
+    <h2>🎯 Recommendations</h2><div class="recommendation critical">
+        <strong>CRITICAL</strong> - security<br>
+        URGENT: Fix payment token storage and webhook signature validation before any production deployment<br>
+        <small>Files: src/services/subscriptionService.ts</small>
+      </div><div class="recommendation critical">
+        <strong>CRITICAL</strong> - testing<br>
+        Add comprehensive tests for payment processing and webhook handlers - critical security code<br>
+        <small>Files: src/services/subscriptionService.test.ts</small>
+      </div><div class="recommendation high">
+        <strong>HIGH</strong> - bug-risk<br>
+        Fix race condition in subscription state updates - concurrent requests can cause duplicate charges<br>
+        <small>Files: src/services/subscriptionService.ts</small>
+      </div><div class="recommendation high">
+        <strong>HIGH</strong> - maintainability<br>
+        Refactor PremiumFeatures component - too large (250 lines), split into smaller focused components<br>
+        <small>Files: src/components/PremiumFeatures.tsx</small>
+      </div><div class="recommendation medium">
+        <strong>MEDIUM</strong> - accessibility<br>
+        Add accessibility attributes (aria-labels, role, keyboard navigation) to premium tier selector<br>
+        <small>Files: src/components/PremiumFeatures.tsx</small>
+      </div><h2>📁 File Details</h2><div class="file-section">
+      <h3>src/services/subscriptionService.ts</h3>
+      <table>
+        <tr><td>Quality Score</td><td>54/100</td></tr>
+        <tr><td>Test Coverage</td><td>~62%</td></tr>
+      </table>
+      
+      <h4>Issues (4)</h4><div class="issue critical">
+          <span class="severity critical">CRITICAL</span>
+          <strong>Line 18:</strong> Payment token stored in plain text in logs and database - exposes PCI-DSS compliance violation<br>
+          <small>Suggestion: Never log sensitive payment data. Use PCI-compliant tokenization and store only token references</small>
+        </div><div class="issue critical">
+          <span class="severity critical">CRITICAL</span>
+          <strong>Line 42:</strong> Missing validation of payment webhook signatures - allows unauthorized subscription changes<br>
+          <small>Suggestion: Validate webhook signatures using HMAC-SHA256 before processing payment events</small>
+        </div><div class="issue high">
+          <span class="severity high">HIGH</span>
+          <strong>Line 65:</strong> Race condition in subscription state update - concurrent requests can create duplicate charges<br>
+          <small>Suggestion: Use database transactions and row-level locking for subscription state updates</small>
+        </div><div class="issue high">
+          <span class="severity high">HIGH</span>
+          <strong>Line 28:</strong> Hardcoded payment processor API endpoints - not configurable<br>
+          <small>Suggestion: Move payment processor endpoints to environment configuration</small>
+        </div><h4>Test Gaps (3)</h4><div class="issue medium">
+          <strong>branch:</strong> Payment webhook validation at line 42-50<br>
+          Priority: critical<br>
+          Suggested: Test valid and invalid webhook signatures, test replay attack prevention
+        </div><div class="issue medium">
+          <strong>edge-case:</strong> Concurrent subscription upgrade requests<br>
+          Priority: critical<br>
+          Suggested: Test concurrent requests for same subscription, verify no duplicate charges
+        </div><div class="issue medium">
+          <strong>branch:</strong> Failed payment retry logic at line 70-80<br>
+          Priority: high<br>
+          Suggested: Test exponential backoff and max retry limits
+        </div><h4>Refactoring Opportunities (2)</h4><div class="issue low">
+          <strong>pattern-improvement:</strong> Implement state machine pattern for subscription lifecycle management<br>
+          Impact: high<br>
+          Benefits: Clearer state transitions, reduces race conditions, easier to extend with new states
+        </div><div class="issue low">
+          <strong>extract-function:</strong> Extract webhook handler into separate class with signature validation<br>
+          Impact: high<br>
+          Benefits: Isolates security-critical code, easier to audit, reusable for other webhooks
+        </div></div><div class="file-section">
+      <h3>src/components/PremiumFeatures.tsx</h3>
+      <table>
+        <tr><td>Quality Score</td><td>70/100</td></tr>
+        <tr><td>Test Coverage</td><td>~55%</td></tr>
+      </table>
+      
+      <h4>Issues (3)</h4><div class="issue high">
+          <span class="severity high">HIGH</span>
+          <strong>Line 15:</strong> Feature flag logic not extracted - scattered throughout component<br>
+          <small>Suggestion: Create custom hook useFeatureFlag() to centralize feature flag checks</small>
+        </div><div class="issue medium">
+          <span class="severity medium">MEDIUM</span>
+          <strong>Line 32:</strong> Missing accessibility attributes for subscription tier selector<br>
+          <small>Suggestion: Add aria-labels, role attributes, and keyboard navigation support</small>
+        </div><div class="issue low">
+          <span class="severity low">LOW</span>
+          <strong>Line 50:</strong> Component has 250+ lines - should be split into smaller components<br>
+          <small>Suggestion: Extract PricingTable, SubscriptionForm, and FeatureList into separate components</small>
+        </div><h4>Test Gaps (2)</h4><div class="issue medium">
+          <strong>branch:</strong> Subscription success/failure flows<br>
+          Priority: critical<br>
+          Suggested: Test successful subscription creation and error handling for failed payments
+        </div><div class="issue medium">
+          <strong>edge-case:</strong> User with existing subscription viewing upgrade options<br>
+          Priority: high<br>
+          Suggested: Test upgrade path, pricing differential, and billing adjustments
+        </div><h4>Refactoring Opportunities (1)</h4><div class="issue low">
+          <strong>simplify:</strong> Break component into smaller, focused components<br>
+          Impact: high<br>
+          Benefits: Better code organization, easier to test individual parts, improved readability
+        </div></div><div class="file-section">
+      <h3>src/database/subscriptionSchema.ts</h3>
+      <table>
+        <tr><td>Quality Score</td><td>85/100</td></tr>
+        <tr><td>Test Coverage</td><td>~0%</td></tr>
+      </table>
+      
+      <h4>Issues (2)</h4><div class="issue medium">
+          <span class="severity medium">MEDIUM</span>
+          <strong>Line 12:</strong> No database indexes on frequently queried fields<br>
+          <small>Suggestion: Add indexes on user_id, subscription_status, and renewal_date fields</small>
+        </div><div class="issue low">
+          <span class="severity low">LOW</span>
+          <strong>Line 25:</strong> Missing column documentation for complex fields<br>
+          <small>Suggestion: Add SQL comments explaining subscription_data JSON structure</small>
+        </div><h4>Test Gaps (1)</h4><div class="issue medium">
+          <strong>edge-case:</strong> Subscription renewal date update with timezone handling<br>
+          Priority: high<br>
+          Suggested: Test subscription renewal date calculations across different timezones
+        </div><h4>Refactoring Opportunities (1)</h4><div class="issue low">
+          <strong>modernize:</strong> Consider using migration tool (e.g., Flyway, Knex) instead of raw SQL<br>
+          Impact: medium<br>
+          Benefits: Better version control, easier rollback, production safety
+        </div></div><div class="footer">
+    <p>Generated at 2026-11-23T11:15:29.094Z • Duration: 40249ms</p>
   </div>
-
-  <h2>🎯 Top Recommendations</h2>
-  <ul><li>No recommendations at this time.</li></ul>
-
-  <footer>
-    Generated at 2026-11-23T06:39:48.805Z • Duration: 9ms
-  </footer>
+  </div>
 </body>
 </html>
